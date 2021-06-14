@@ -1,0 +1,31 @@
+heroku login
+
+git init 
+git add .
+git commit -m "commit"
+
+heroku create ipl-auction2021
+
+heroku git:remote -a herokuappname
+
+pip install gunicorn
+
+#gunicorn auctionsite.wsgi 
+
+touch Procfile
+Procfile Content =>  web: gunicorn auctionsite.wsgi
+
+heroku local
+
+pip freeze > requirements.txt
+git add .
+git commit -m "procfile & requirement"
+git push heroku master 
+
+add heroku url host to allowed host in setting.py & 127.0.0.1
+
+git add .
+git commit -m "allowed host"
+git push heroku master 
+
+

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All CricKeters</title>
+    <style>
+        *{
+            box-sizing: content-box;
+            /* margin: 0; */
+            padding: 0;
+        }
+        .card{
+            width: 20%;
+            padding-left: .7%;
+            display: inline-block;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px; 
+            margin: 2%;
+            transition: transform .4s;
+            color: rgb(18, 70, 129);
+            background-color: rgb(202, 179, 179);
+        }
+        .card:hover{
+            transform: scale(1.4);
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            color: darkgrey;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+        }
+        img {
+            width: 250px;
+            height: 150px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            object-fit: cover;
+        }
+        .h1{
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        a:link {text-decoration: none;    text-align: center;
+            text-shadow:1px 1px rgb(0, 0, 3);
+            font-family: "Comic Sans MS", cursive, sans-serif;}
+        a:hover {text-decoration: underline;}
+        body{
+            background-color: rgb(171, 171, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 align="center" style="font-family: Comic Sans MS, cursive, sans-serif;">ALL AVAILABLE CRICKETERS
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="home">HOME</a></h1>
+    </div>
+    
+    {% for cricketer in cricketers %}
+    <div class="card">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="{{cricketer.cricketer_name}}/">{{cricketer.cricketer_name}}</a>
+     <br>
+     <img src="{{cricketer.image.url}}" alt="Hello">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="bid/{{cricketer.cricketer_name}}/">bid=${{cricketer.bid}}</a>
+     <br>
+    </div>
+    {% endfor %}
+</body>
+</html>

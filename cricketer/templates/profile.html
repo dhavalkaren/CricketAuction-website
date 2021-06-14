@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+    <title>Cricketer Profile</title>
+    <body>
+    <style>
+        .header{
+            background-color: rgb(69, 141, 67);
+            height: 40px;
+            width: 100%;
+            padding-top: 20px;
+            text-align: center;
+            color: rgb(43, 40, 40);
+            font-weight: bold;
+            font-size: large;
+            font-style: italic;
+        }
+        .footer{
+            background-color: rgb(69, 141, 67);
+            height: 30px;
+            width: 100%;
+        }
+        .main{
+            height: 560px;
+            background-color: rgb(15, 15, 15);
+            background: url('crck.jpg');
+            color: darkkhaki;
+        }
+        .center{
+            height: 560px;
+            background-color: #02353C;
+            width: 40%;
+            float: left;
+            text-align: center;
+            color: darkkhaki;
+            box-shadow: 2px 2px 20px rgb(173, 162, 162);
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        .left{
+            height: 560px;
+            background-color: #02353C;
+            width: 30%;
+            color: darkkhaki;
+            float: left;
+            text-align: center;
+            box-shadow: 2px 2px 20px rgb(173, 162, 162);
+        }
+        .right{
+            height: 560px;
+            width: 30%;
+            background-color: #02353C;
+            float: left;
+            color: darkkhaki;
+            text-align: center;
+            box-shadow: 2px 2px 20px rgb(173, 162, 162);
+        }
+        img{
+            height: 180px;
+            width: 350px;
+            transition: transform .6s;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+        img:hover{
+            transform: scale(2.3);
+        }
+    </style>
+    </body>
+</head>
+<body>
+    <div class="header">
+        PLAYER PROFILE
+    </div>
+    <div class="main">
+        
+       <div class="left"></div> 
+       <div class="center">
+        {% for list in n %}
+        <img src="{{list.image.url}}" alt="">
+        <br>
+        <br>
+        <table align="center">
+            <tr>
+                <td>CRICKETER NAME:</td>
+                <td>{{list.cricketer_name}}</td>
+            </tr> 
+            <tr>
+                <td>CRICKETER TYPE:</td>
+                <td>{{list.type}}</td>
+            </tr>   
+            <tr>
+                <td>MATCHES:</td>
+                <td>{{list.matches}}</td>
+            </tr>   
+            <tr>
+                <td>RUNS:</td>
+                <td>{{list.runs}}</td>
+            </tr>   
+            <tr>
+                <td>HIGHEST:</td>
+                <td>{{list.highest}}</td>
+            </tr>   
+            <tr>
+                <td>AVERAGE:</td>
+                <td>{{list.average}}</td>
+            </tr>   
+            <tr>
+                <td>WICKETS:</td>
+                <td>{{list.wickets}}</td>
+            </tr>   
+            <tr>
+                <td>ECONOMY:</td>
+                <td>{{list.economy}}</td>
+            </tr>   
+            <tr>
+                <td>STRIKE RATE:</td>
+                <td>{{list.strike_rate}}</td>
+            </tr>   
+            <tr>
+                <td>HUNDEREDS:</td>
+                <td>{{list.hundreds}}</td>
+            </tr>   
+            <tr>
+                <td>FIFETIES:</td>
+                <td>{{list.fifeties}}</td>
+            </tr> 
+            <tr>
+                <td>BASE PRICE:</td>
+                <td>{{list.bid}}</td>
+            </tr>   
+        </table>
+        <br>
+        {% endfor %}
+       </div>
+        <div class="right"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
